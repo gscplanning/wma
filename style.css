@@ -1,0 +1,99 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.group:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+body,
+html {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+}
+
+header, .map-application {
+    min-width: 400px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    padding: 5px;
+    z-index: 9;
+    border-bottom: 1px solid #34495e;
+    width:100%;
+    background-color: #34495e;
+    box-shadow: 0px 2.5px 5px 0px rgba(48,48,48,0.85);
+    color: white;
+  }
+header .appName {
+    float: left;
+    /*padding: 5px;*/
+}
+
+header .logo {
+    float: right;
+}
+header .logo>a>img {
+    /*width: 40px;*/
+    height: 40px;
+    /*box-shadow: 1px 1px 5px 0px rgba(48,48,48,1);*/
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+.map-application {
+    height: 100%;
+    
+    padding-top: 50px;
+}
+
+.info {
+padding: 6px 8px;
+font: 14px/16px 'Open Sans', Arial, Helvetica, sans-serif;
+background: white;
+background: rgba(255,255,255,1);
+box-shadow: 0px 2.5px 5px 0px rgba(48,48,48,0.85);
+max-width: 400px;
+}
+.info h4 {
+margin: 0;
+font-size: 1.6em;
+font-family: 'Roboto Slab';
+font-weight: 700;
+}
+.info hr {
+  margin-top: 4px;
+  margin-bottom: 2px;
+  border: hidden;
+  border-bottom: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #ddd;
+}
+
+.leaflet-container {
+      font: 14px/16px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+.leaflet-control-layers,
+.leaflet-control-measure,
+.leaflet-popup-content-wrapper,
+.leaflet-bar a:first-child,
+.leaflet-bar a:last-child {
+  border-radius: 0;
+  box-shadow: 0px 2.5px 5px 0px rgba(48,48,48,0.85);
+}
+.leaflet-control-measure .leaflet-control-measure-toggle {
+  height: 26px;
+  width: 26px;
+}

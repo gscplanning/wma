@@ -3,72 +3,33 @@
 <head>
   <meta charset="utf-8">
   <title>WMA Aerial + Slope</title>
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
-  <script src="//cdn.jsdelivr.net/leaflet.esri/1.0.0/esri-leaflet.js"></script>
-  <script src="leaflet.ajax.min.js"></script>
+  
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
+  <link rel="stylesheet" href="leaflet.defaultextent.css" />
+  <link rel="stylesheet" href="leaflet-measure/leaflet-measure.css">
+  <link rel="stylesheet" type="text/css" href="leaflet-draw/leaflet.draw.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <div id="map"></div>
-  <script>
-
-
-   
-
-    var map = L.map('map', {
-      minZoom: 13,
-      maxZoom: 18
-    })
-      .setView([38.328393, -84.544945], 14);
-    
-    var base = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-  subdomains: 'abcd',
-  maxZoom: 19
-    }).addTo(map);
-    
-    // var wma = L.tileLayer.wms('http://gis.gscplanning.com/arcgis/rest/services/wma_aerial2012_hs/MapServer/WMSServer').addTo(map);
-
-    var wma = {
-      Aerial: L.esri.tiledMapLayer({
-        url: "http://gis.gscplanning.com/arcgis/rest/services/wma_aerial2012_hs/MapServer"
-      }),
-      Slope: L.esri.tiledMapLayer({
-        url: "http://gis.gscplanning.com/arcgis/rest/services/wma_slope_hs/MapServer"
-      })
-    };
-
-    wma.Aerial.addTo(map);
-    L.control.layers(wma,{},{collapsed:false}).addTo(map);
-
-     var wmaLineStyle = {
-      color: "#FFFFFF",
-      weight: 2.5,
-      opacity: 0.75,
-      dashArray: "5, 10, 2.5"
-     };
-
-    var wmaLine = new L.GeoJSON.AJAX("wma_ln.geojson", {
-      style: wmaLineStyle
-    }).addTo(map);
-
-    var wmaWestPathsStyle = {
-      color: "#CC0099",
-      weight: 1,
-      opacity: 0.75,
-      fillOpacity: 0.5,
-      fillColor: "#CC0099"
-      }
-
-    var wmaPaths = new L.GeoJSON.AJAX("wma_westPaths.geojson", {
-      style: wmaWestPathsStyle
-    }).addTo(map);
-
-
-  </script>
+  <header class="group">
+    <div class="appName">
+      <h4>Veteran's Wildlife Management Area</h4>
+      <p>Potential Horse Trails</p>
+    </div>
+    <div class="logo">
+      <a href=""><img src="logo_thumb.png"></a>
+    </div>
+  </header>
+  <div class="map-application">
+    <div id="map" class="map"></div>
+  </div>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+  <script src="esri-leaflet.js"></script>
+  <script src="leaflet.ajax.min.js"></script>
+  <script src="leaflet.defaultextent.js"></script>
+  <script src="leaflet-measure/leaflet-measure.min.js"></script>
+  <script src="leaflet-draw/leaflet.draw.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
