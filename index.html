@@ -3,27 +3,102 @@
 <head>
   <meta charset="utf-8">
   <title>WMA Aerial + Slope</title>
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
   <link rel="stylesheet" href="leaflet.defaultextent.css" />
   <link rel="stylesheet" href="leaflet-measure/leaflet-measure.css">
   <link rel="stylesheet" type="text/css" href="leaflet-draw/leaflet.draw.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+    
+  </style>
 </head>
 <body>
-  <header class="group">
-    <div class="appName">
-      <h4>Veteran's Wildlife Management Area</h4>
-      <p>Potential Horse Trails</p>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="#">Veteran's WMA - Potential Horse Trails</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#legendModal" data-toggle="modal" data-target="#legendModal">Legend</a></li>
+          <li><a href="#helpModal" data-toggle="modal" data-target="#helpModal">Help</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     </div>
-    <div class="logo">
-      <a href=""><img src="logo_thumb.png"></a>
+  </nav>
+  <div id="map" class="map"></div>
+
+  <!-- Legend Modal -->
+  <div class="modal fade" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="legendModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="legendModalLabel">Legend</h4>
+      </div>
+      <div class="modal-body">
+        <div id="slopeLegend">
+          <h5>Slope</h5>
+          <div>
+            <i class="legendIcon" id="slopeLegendSmall"></i> <15%
+            <br>
+            <i class="legendIcon" id="slopeLegendBig"></i>>15%
+          </div>
+        </div>
+        <div id="trailsLegend">
+          <h5>Trails &amp; Paths</h5>
+          <div>
+            <i class="legendIcon" id="potentialTrailFull"></i> Potential Trail (Full)
+            <br>
+            <i class="legendIcon" id="potentialTrailPart"></i>Potential Trail (Partial)
+            <br>
+            <i class="legendIcon" id="existingPaths"></i>Existing Paths
+          </div>
+        </div>
+        <div id="wmaLegend">
+          <h5>WMA</h5>
+          <div>
+            <span class="legendIconSurround"><i class="legendIcon" id="wmaBounds"></i></span>WMA Boundary
+          </div>
+        </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
-  </header>
-  <div class="map-application">
-    <div id="map" class="map"></div>
   </div>
+</div>
+
+<!-- Help Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="helpModalLabel">Help</h4>
+      </div>
+      <div class="modal-body">
+        Soon there will be some more text to help you get the most out of this map. In the bottom-left corner are tools for drawing your own paths and measuring both lines and areas.
+        <br><br>
+        In the bottom-right there is a layer toggler. You can toggle the WMA map between an aerial view or evaluation of slope. You can also turn on and off the WMA boundary and the existing paths through the western portion of the WMA.
+        <br><br>
+        If you hover over a proposed path, you will see some information pop up in the top-right corner. Click on the path to zoom to it.
+        <br><br>
+        If you want to zoom back out to the full extent of the map, press the little button with the house icon in the top-left corner.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
   <script src="esri-leaflet.js"></script>
   <script src="leaflet.ajax.min.js"></script>
