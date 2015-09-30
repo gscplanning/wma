@@ -10,9 +10,6 @@
   <link rel="stylesheet" type="text/css" href="leaflet-draw/leaflet.draw.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <style type="text/css">
-    
-  </style>
 </head>
 <body>
 
@@ -24,8 +21,8 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#legendModal" data-toggle="modal" data-target="#legendModal">Legend</a></li>
-          <li><a href="#helpModal" data-toggle="modal" data-target="#helpModal">Help</a></li>
+          <li><a href="#legendModal" data-toggle="modal" data-target="#legendModal" class="btn btn-default">Legend</a></li>
+          <li><a href="#helpModal" data-toggle="modal" data-target="#helpModal" class="btn btn-default">Help</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -34,7 +31,7 @@
 
   <!-- Legend Modal -->
   <div class="modal fade" id="legendModal" tabindex="-1" role="dialog" aria-labelledby="legendModalLabel">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-narrow" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -62,7 +59,7 @@
         <div id="wmaLegend">
           <h5>WMA</h5>
           <div>
-            <span class="legendIconSurround"><i class="legendIcon" id="wmaBounds"></i></span>WMA Boundary
+            <i class="legendIcon" id="wmaBounds"><i class="legendIcon" id="wmaTicks"></i></i>WMA Boundary
           </div>
         </div>  
       </div>
@@ -82,13 +79,44 @@
         <h4 class="modal-title" id="helpModalLabel">Help</h4>
       </div>
       <div class="modal-body">
-        Soon there will be some more text to help you get the most out of this map. In the bottom-left corner are tools for drawing your own paths and measuring both lines and areas.
-        <br><br>
-        In the bottom-right there is a layer toggler. You can toggle the WMA map between an aerial view or evaluation of slope. You can also turn on and off the WMA boundary and the existing paths through the western portion of the WMA.
-        <br><br>
-        If you hover over a proposed path, you will see some information pop up in the top-right corner. Click on the path to zoom to it.
-        <br><br>
-        If you want to zoom back out to the full extent of the map, press the little button with the house icon in the top-left corner.
+        <div class="tabbable">  
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#draw" aria-controls="profile" role="tab" data-toggle="tab">Draw</a></li>
+            <li role="presentation"><a href="#measure" aria-controls="messages" role="tab" data-toggle="tab">Measure</a></li>
+            <li role="presentation"><a href="#switch-layers" aria-controls="settings" role="tab" data-toggle="tab">Switch Layers</a></li>
+            <li role="presentation"><a href="#full-extent" aria-controls="settings" role="tab" data-toggle="tab">Full Extent</a></li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+              Beyond the typical panning and zooming, this map contains some little tools to help you draw your own draw, measure, and explore the data from different perspectives. Navigate through the tabs to see how you can use the map's tools.
+            </div>
+            <div role="tabpanel" class="tab-pane" id="draw">
+              Use the Draw tool to sketch out your own paths through the WMA.
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Y-8SIQE5qrA"></iframe>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="measure">
+              Measure paths and areas.
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sFNY5k3IlHE"></iframe>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="switch-layers">
+              Toggle between different layers.
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_ikYepIWXCw"></iframe>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="full-extent">
+              Return to the full extent of the map after you've zoomed in.
+              <div class="embed-responsive embed-responsive-4by3">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/a_Aw-RxzWiU"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
