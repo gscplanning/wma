@@ -41,7 +41,7 @@ info.onAdd = function(map) {
 info.update = function(props) {
   this._div.innerHTML = (props ? '<h4>' + props.label + '</h4><hr>' + 
     '<b>Type: </b>' + props.type.charAt(0).toUpperCase() + props.type.substring(1) + ' Trail<br/><b>Distance (mi): </b>' + props.distMiles + '<br /><b>Description: </b>' 
-    + props.description:'<b>Hover over or click a proposed trail for more info</b>');
+    + props.descriptio:'<b>Hover over or click a proposed trail for more info</b>');
 };
 info.addTo(map);
 
@@ -49,7 +49,7 @@ function highlightFeature(e) {
   var layer = e.target;
 
   layer.setStyle({
-    weight: 6,
+    weight: 5,
     opacity: 0.8
   });
 
@@ -79,16 +79,16 @@ function onEachFeature(feature, layer) {
 }
 
 function trailTypeColor(d) {
-  return d == "full" ? "#FF9900" :
-    d == "partial" ? "#FFFF99" :
+  return d == "main" ? "#FF9900" :
+    d == "spur" ? "#FFFF99" :
     "#CC0033";
 }
 
 function wmaPotentialTrailsStyle(feature) {
   return {
     color: trailTypeColor(feature.properties.type),
-    weight: 4,
-    opacity: 0.8
+    weight: 3,
+    opacity: 0.7
   };
 }
 
