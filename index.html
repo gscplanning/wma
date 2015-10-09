@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>WMA Aerial + Slope</title>
+  <title>GSCPC | WMA Potential Horse Trails</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
   <link rel="stylesheet" href="leaflet.defaultextent.css" />
@@ -23,6 +23,7 @@
         <ul class="nav navbar-nav">
           <li><a href="#legendModal" data-toggle="modal" data-target="#legendModal" class="btn btn-primary">Legend</a></li>
           <li><a href="#helpModal" data-toggle="modal" data-target="#helpModal" class="btn btn-primary">Help</a></li>
+          <li><a href="#disclaimerModal" data-toggle="modal" data-target="#disclaimerModal" class="btn btn-primary">Disclaimer</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -124,6 +125,24 @@
     </div>
   </div>
 </div>
+
+<!-- Disclaimer Modal -->
+<div class="modal fade" id="disclaimerModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Disclaimer</h4>
+      </div>
+      <div class="modal-body">
+        <p>This map was created as part of the visioning process for the expansion of equestrian and multi-modal travel in Scott County. The potential paths shown in this map do not necessarily represent planned paths, but rather serve as jumping off points for further conversations. If you have questions, comments, or concerns, feel free to contact the Georgetown-Scott County Planning Commission at <a href="mailto:email@gscplanning.com?WMA%2Potential%20Horse%Trails" target="_top">email@gscplanning.com</a> or (502) 867-3701.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

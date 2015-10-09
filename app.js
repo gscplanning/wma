@@ -10,8 +10,7 @@ L.control.attribution().addAttribution('<a href="http://www.gscplanning.com">GSC
     
 var base = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-  subdomains: 'abcd',
-  maxZoom: 19
+  subdomains: 'abcd'
 }).addTo(map);
 
 var wma = {
@@ -19,7 +18,9 @@ var wma = {
     url: "http://gis.gscplanning.com/arcgis/rest/services/wma_aerial2012_hs/MapServer"
   }),
   Slope: L.esri.tiledMapLayer({
-    url: "http://gis.gscplanning.com/arcgis/rest/services/wma_slope_hs/MapServer"
+    url: "http://gis.gscplanning.com/arcgis/rest/services/wma_slope_hs/MapServer",
+    maxNativeZoom: 17,
+    maxZoom: 18
   })
 };
 
@@ -97,11 +98,11 @@ wmaPotentialTrails = new L.GeoJSON.AJAX("wma_potentialTrails.geojson", {
 }).addTo(map);
 
 var wmaWestPathsStyle = {
-  color: "#999966",
+  color: "#8353FC",
   weight: 1,
   opacity: 0.75,
   fillOpacity: 0.5,
-  fillColor: "#999966"
+  fillColor: "#8353FC"
   }
 
 var wmaPaths = new L.GeoJSON.AJAX("wma_westPaths.geojson", {
