@@ -3262,7 +3262,7 @@
     {
       "type": "Feature",
       "properties": {
-        "description": "This would extend the Southern Spur northward and further within the WMAfoll",
+        "description": "This would extend the Southern Spur northward and further within the WMA.",
         "distMiles": 0.89,
         "type": "partial",
         "label": "Southern Spur Extension"
